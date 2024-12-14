@@ -32,6 +32,7 @@ export default {
           dark: '#b42b2b',
           light: '#d34040',
         },
+        menuResponsivo: 'rgba(0, 0, 0, 0.8)',
         gray: '#b3b3b3',
       },
 
