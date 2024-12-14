@@ -55,7 +55,6 @@ export function Contact() {
 
     const handleFormEdit = (e: React.ChangeEvent, name: string) => {
         setFormData({...formData, [name]: (e.target as HTMLInputElement).value});
-        console.log(formData.message);
     }
 
     
@@ -63,6 +62,11 @@ export function Contact() {
         try {
             const response = await enviarEmail(formData.name, formData.email, formData.message);
             console.log(response);
+            setFormData({
+                name: '',
+                email: '',
+                message: ''
+            });
             toast.success('Mensagem enviada com sucesso');
         } catch (error) {
             console.error('Error ao enviar email', error);
