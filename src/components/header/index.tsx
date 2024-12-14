@@ -17,7 +17,6 @@ export default function Header() {
     };
   }, []);
 
-  // Função para alternar o menu
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
@@ -27,20 +26,18 @@ export default function Header() {
       }`}
     >
       <div className="w-full h-full max-w-[1440px] mx-auto flex items-center justify-between text-white-light px-4">
-        {/* Logo */}
         <div>
-          <h1 className="text-3xl font-roboto font-bold">Dev Vilela</h1>
+          <Link to="/">
+              <h1 className="text-3xl font-roboto font-bold">Dev Vilela</h1>
+          </Link>
         </div>
-
-        {/* Botão Hamburguer */}
+       
         <button
           className="lg:hidden text-3xl focus:outline-none"
           onClick={toggleMenu}
         >
           ☰
         </button>
-
-        {/* Links do menu - desktop */}
         <nav className="hidden lg:block">
           <ul className="flex gap-4 font-bold text-lg">
             {links.map((link, index) => (
@@ -57,7 +54,6 @@ export default function Header() {
         </nav>
       </div>
 
-      {/* Menu responsivo em tela cheia */}
       <div
         className={`fixed inset-0 bg-menuResponsivo text-white-light flex flex-col items-center justify-center gap-6 text-2xl transition-transform duration-500 ${
           menuOpen ? "translate-x-0" : "translate-x-full"
@@ -78,7 +74,7 @@ export default function Header() {
                   className={`hover:text-red-normal ${
                     location.pathname === link.url ? "text-red-normal" : ""
                   }`}
-                  onClick={() => setMenuOpen(false)} // Fecha o menu ao clicar no link
+                  onClick={() => setMenuOpen(false)} 
                 >
                   {link.name}
                 </Link>
