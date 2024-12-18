@@ -5,6 +5,7 @@ import linksDev from "../../assets/linksdev.png";
 import devCurrency from "../../assets/devcurrency.png";
 import onGames from "../../assets/ongames.png";
 import projetoWeb from "../../assets/projetoweb.png";
+import vilelajlimports from "../../assets/vilelajlimports.png";
 
 interface ProjectType {
     id: number;
@@ -88,6 +89,14 @@ export const projects: ProjectType[] = [
         img:  projetoWeb,
         url: "https://blueskyrealty.vercel.app/",
         languages: ['HTML', 'CSS', 'JavaScript'],
+    },
+    {
+        id: generateID(),
+        title: "VilelaJLImports",
+        description: "Projeto de um site de loja de eletronicos para estudo de desenvolvimento frontend. Foram utilizados alem das linguagens, redux, styled-components e react-router-dom",
+        img:  vilelajlimports,
+        url: "https://vilelajlimports.vercel.app/",
+        languages: ['Vite', 'React', 'TypeScript', 'Tailwind'],
     },
 
 ]
